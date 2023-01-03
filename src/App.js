@@ -23,7 +23,10 @@ const App = () => {
   return (
     <div className="app">
       {data.map((d) => (
-        <div key={d.id}>{d.attributes.header}</div>
+        <div key={d.id}>
+          {d.attributes.header}
+          {d.attributes.description}
+        </div>
       ))}
     </div>
   )
