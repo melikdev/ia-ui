@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown"
 import useFetch from "../../hooks/useFetch"
 
 const AboutUs = () => {
-  const url = process.env.REACT_APP_API_URL + "/about-uses" + "?populate=*"
+  const url = process.env.REACT_APP_API_URL + "/about-uses"
   const { data: about } = useFetch(url)
 
   const Container = styled.main`
