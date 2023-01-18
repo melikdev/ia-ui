@@ -1,5 +1,5 @@
 .home {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 150px);
   background-image: url("../images/home/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .home h1 {
@@ -31,4 +31,11 @@
 .home p {
   color: #fff;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  .home-wrapper > h1 {
+    font-size: 35px;
+    text-align: center;
+  }
 }

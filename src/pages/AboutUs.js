@@ -60,12 +60,6 @@ const AboutUs = () => {
               <ReactMarkdown children={a.attributes.background2} />
             </small>
           </article>
-          <section></section>
-          <article>
-            <small>
-              <ReactMarkdown children={a.attributes.plan} />
-            </small>
-          </article>
           <h1 style={{ textAlign: "center" }}>TEAM</h1>
           <section className="team grid">
             <article className="harun">

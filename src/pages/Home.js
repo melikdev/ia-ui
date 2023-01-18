@@ -3,7 +3,7 @@ import "../assets/styles/home.css"
 
 const Home = () => {
   return (
-    <main className="home ">
+    <main className="home">
       <section className="home-wrapper">
         <h1>ISLAMIC AGROECOLOGY</h1>
         <Link role="button" to="/about-us">
