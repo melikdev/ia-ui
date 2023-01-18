@@ -3,10 +3,11 @@ import Team from "./components/Team"
 
 // pages
 import AboutUs from "./pages/AboutUs"
+import Events from "./pages/Events"
 // import Contact from "./pages/Contact"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
-import Retreat1 from "./pages/Retreat1"
+import Retreat from "./pages/Retreat"
 
 const App = () => {
   return (
@@ -15,9 +16,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/about-us/team" element={<Team />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-        <Route path="/retreat" element={<Retreat1 />} />
+        <Route path="/retreat" element={<Retreat />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
     </>
   )

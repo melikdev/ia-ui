@@ -9,8 +9,8 @@ const Navbar = () => {
           <Link to="/">
             <img
               alt=""
-              height="110px"
-              width="100px"
+              height="150px"
+              width="140px"
               src={require("../assets/images/nav-logo.png")}
             />
           </Link>

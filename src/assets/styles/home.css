@@ -1,5 +1,5 @@
 .home {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
   background-image: url("../images/home/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -8,6 +8,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.home-wrapper {
+  margin-top: 120px;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .home h1 {
@@ -20,14 +31,4 @@
 .home p {
   color: #fff;
   text-align: center;
-}
-
-.home-wrapper {
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 30px;
 }
