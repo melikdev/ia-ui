@@ -1,0 +1,22 @@
+.team {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.harun,
+.ghezal {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.vision a {
+  vertical-align: super;
+  font-size: 12px;
+}
