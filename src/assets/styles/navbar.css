@@ -2,12 +2,16 @@ ul li {
   font-size: 18px;
 }
 
-nav {
+.container-fluid {
+  background-color: #fff;
   top: 0;
   left: 0;
   position: sticky;
-  background-color: #fff;
   z-index: 999;
+}
+
+.container {
+  background-color: #fff;
 }
 
 .hamburger-icon {
