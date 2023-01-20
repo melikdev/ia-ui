@@ -1,4 +1,4 @@
-import "../assets/styles/navbar.css"
+import "../assets/styles/navbar.scss"
 
 // important
 import { Link } from "react-router-dom"

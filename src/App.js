@@ -4,7 +4,6 @@ import Team from "./components/Team"
 // pages
 import AboutUs from "./pages/AboutUs"
 import Events from "./pages/Events"
-// import Contact from "./pages/Contact"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
 import Retreat from "./pages/Retreat"
@@ -19,7 +18,6 @@ const App = () => {
         <Route path="/retreat" element={<Retreat />} />
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
     </>
   )

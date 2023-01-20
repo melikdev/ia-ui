@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown"
-import "../assets/styles/about-us.css"
+import "../assets/styles/about-us.scss"
 
 // hooks
 import useFetch from "../hooks/useFetch"

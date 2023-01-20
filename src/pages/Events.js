@@ -8,12 +8,14 @@ const Events = () => {
 
   return (
     <main className="container">
-      <h1 style={{ textAlign: "center" }}>EVENTS</h1>
       {events.map((e) => (
         <article key={e.id}>
-          <small>
-            <ReactMarkdown children={e.attributes.events_info} />
-          </small>
+          <h1 style={{ textAlign: "center" }}>{e.attributes.header}</h1>
+          <article>
+            <small>
+              <ReactMarkdown children={e.attributes.events_info} />
+            </small>
+          </article>
         </article>
       ))}
     </main>

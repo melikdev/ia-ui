@@ -8,6 +8,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    font-size: 60px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+  }
 }
 
 .home-wrapper {
@@ -21,21 +33,11 @@
   gap: 30px;
 }
 
-.home h1 {
-  font-size: 60px;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-.home p {
-  color: #fff;
-  text-align: center;
-}
-
 @media (max-width: 480px) {
-  .home-wrapper > h1 {
-    font-size: 35px;
-    text-align: center;
+  .home-wrapper {
+    h1 {
+      font-size: 35px;
+      text-align: center;
+    }
   }
 }

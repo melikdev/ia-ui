@@ -24,21 +24,25 @@ ul li {
   top: 50px;
 }
 
-.hamburger-menu ul {
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  background-color: #fff;
-  margin-top: 30px;
-  height: 100vh;
-  right: 0;
-  width: 50vw;
+.hamburger-menu {
+  ul {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: #fff;
+    margin-top: 30px;
+    height: 100vh;
+    right: 0;
+    width: 50vw;
+  }
 }
 
-.hamburger-menu li {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
+.hamburger-menu {
+  li {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
