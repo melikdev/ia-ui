@@ -4,7 +4,6 @@ import useFetch from "../hooks/useFetch"
 const Retreat = () => {
   const url = process.env.REACT_APP_API_URL + "/retreats?populate=*"
   const { data: retreat } = useFetch(url)
-  console.log(retreat)
 
   return (
     <main className="container">

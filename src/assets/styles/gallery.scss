@@ -37,7 +37,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: rgba(85, 85, 85, 0.4);
+  background-color: rgba(85, 85, 85, 0.8);
   color: #fff;
   cursor: auto;
 }
@@ -64,6 +64,10 @@
     color: #a3a3a3;
     transition: 0.5s all ease;
 
+    @media (max-width: 480px) {
+      background: #fff;
+    }
+
     &:hover {
       transition: 0.5s all ease;
       color: #fff;
@@ -80,6 +84,7 @@
     }
 
     .arrows {
+      z-index: 999;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -91,12 +96,21 @@
         position: absolute;
         top: 250px;
         left: 450px;
+
+        @media (max-width: 480px) {
+          top: 150px;
+          left: 170px;
+        }
       }
 
       .prev {
         position: absolute;
         top: 250px;
         left: 20px;
+
+        @media (max-width: 480px) {
+          top: 150px;
+        }
       }
     }
 
