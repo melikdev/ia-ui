@@ -29,8 +29,8 @@ const ContactPage = () => {
 
   return (
     <main className="container">
-      <article>
-        <form ref={formRef} onSubmit={handleSubmit}>
+      <article className="contact-wrapper">
+        <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
           <label>YOUR FIRST NAME:</label>
           <input
             required
