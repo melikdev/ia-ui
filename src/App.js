@@ -7,6 +7,7 @@ import Events from "./pages/Events"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
 import Retreat from "./pages/Retreat"
+import ContactPage from "./pages/ContactPage"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/retreat" element={<Retreat />} />
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </>
   )

@@ -39,7 +39,6 @@ const Gallery = () => {
     setCurrentScientific(
       gallery[currentIndex].attributes.scientific_description
     )
-    console.log(currentIndex)
   }
 
   const previousImage = () => {

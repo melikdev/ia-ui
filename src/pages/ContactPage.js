@@ -28,8 +28,8 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="contact-container">
-      <div className="contact-wrapper">
+    <main className="container">
+      <article>
         <form ref={formRef} onSubmit={handleSubmit}>
           <label>YOUR FIRST NAME:</label>
           <input
@@ -64,8 +64,8 @@ const ContactPage = () => {
             </div>
           </div>
         )}
-      </div>
-    </div>
+      </article>
+    </main>
   )
 }
 
