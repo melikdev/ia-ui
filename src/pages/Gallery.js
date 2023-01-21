@@ -4,8 +4,8 @@ import { useState } from "react"
 import "../assets/styles/gallery.scss"
 
 // Icons
-// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
-// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
 import CloseIcon from "@mui/icons-material/Close"
 
 const Gallery = () => {
@@ -14,7 +14,7 @@ const Gallery = () => {
 
   const [toggleModal, setToggleModal] = useState(false)
   const [currentImg, setCurrentImg] = useState(null)
-  const [currentIndex, setCurrentIndex] = useState()
+  const [currentIndex, setCurrentIndex] = useState([])
   const [currentSpiritual, setCurrentSpiritual] = useState(null)
   const [currentScientific, setCurrentScientific] = useState(null)
 
@@ -26,10 +26,29 @@ const Gallery = () => {
 
   const clickListener = (g, index) => {
     setToggleModal(true)
-    setCurrentImg(gallery[index].attributes.img.data.attributes.url)
-    setCurrentIndex(gallery[index])
+    setCurrentIndex(index)
+    setCurrentImg(g.attributes.img.data.attributes.url)
     setCurrentSpiritual(g.attributes.spiritual_reflection)
     setCurrentScientific(g.attributes.scientific_description)
+  }
+
+  const nextImage = () => {
+    setCurrentIndex(currentIndex + 1)
+    setCurrentImg(gallery[currentIndex].attributes.img.data.attributes.url)
+    setCurrentSpiritual(gallery[currentIndex].attributes.spiritual_reflection)
+    setCurrentScientific(
+      gallery[currentIndex].attributes.scientific_description
+    )
+    console.log(currentIndex)
+  }
+
+  const previousImage = () => {
+    setCurrentIndex(currentIndex - 1)
+    setCurrentImg(gallery[currentIndex].attributes.img.data.attributes.url)
+    setCurrentSpiritual(gallery[currentIndex].attributes.spiritual_reflection)
+    setCurrentScientific(
+      gallery[currentIndex].attributes.scientific_description
+    )
   }
 
   return (
@@ -55,6 +74,20 @@ const Gallery = () => {
                       onClick={() => setToggleModal(false)}
                     />
                     <div className="modal-img">
+                      <div className="arrows">
+                        {currentImg && (
+                          <ArrowForwardIosIcon
+                            className="next"
+                            onClick={() => nextImage(index)}
+                          />
+                        )}
+                        {currentIndex >= 0 && (
+                          <ArrowBackIosIcon
+                            className="prev"
+                            onClick={() => previousImage(index)}
+                          />
+                        )}
+                      </div>
                       <a
                         target="_blank"
                         rel="noreferrer"

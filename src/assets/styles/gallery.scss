@@ -79,6 +79,27 @@
       border-radius: 0;
     }
 
+    .arrows {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+
+      .next {
+        position: absolute;
+        top: 250px;
+        left: 450px;
+      }
+
+      .prev {
+        position: absolute;
+        top: 250px;
+        left: 20px;
+      }
+    }
+
     img {
       display: flex;
       flex: 1;
