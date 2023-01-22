@@ -14,7 +14,7 @@ const Retreat = () => {
           {retreat.map((r) => (
             <section key={r.id}>
               <h1 style={{ textAlign: "center" }}>{r.attributes.header}</h1>
-              <article>
+              <article style={{ padding: "80px" }}>
                 <section>
                   <small>
                     <ReactMarkdown children={r.attributes.intro_text} />

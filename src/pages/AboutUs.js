@@ -62,35 +62,37 @@ const AboutUs = () => {
                   <ReactMarkdown children={a.attributes.background2} />
                 </small>
               </article>
-              <h1 style={{ textAlign: "center" }}>TEAM</h1>
-              <section className="team grid">
-                <article className="harun">
-                  <img
-                    width="200px"
-                    src={
-                      process.env.REACT_APP_UPLOAD_URL +
-                      a.attributes.harun_cicek_img.data.attributes.url
-                    }
-                    alt=""
-                  />
-                  <small>
-                    <ReactMarkdown children={a.attributes.harun_cicek} />
-                  </small>
-                </article>
-                <article className="ghezal">
-                  <img
-                    width="200px"
-                    src={
-                      process.env.REACT_APP_UPLOAD_URL +
-                      a.attributes.ghezal_sabir_img.data.attributes.url
-                    }
-                    alt=""
-                  />
-                  <small>
-                    <ReactMarkdown children={a.attributes.ghezal_sabir} />
-                  </small>
-                </article>
-              </section>
+              <article className="team-container">
+                <h1 style={{ textAlign: "center" }}>TEAM</h1>
+                <section className="team grid">
+                  <article className="harun">
+                    <img
+                      width="200px"
+                      src={
+                        process.env.REACT_APP_UPLOAD_URL +
+                        a.attributes.harun_cicek_img.data.attributes.url
+                      }
+                      alt=""
+                    />
+                    <small>
+                      <ReactMarkdown children={a.attributes.harun_cicek} />
+                    </small>
+                  </article>
+                  <article className="ghezal">
+                    <img
+                      width="200px"
+                      src={
+                        process.env.REACT_APP_UPLOAD_URL +
+                        a.attributes.ghezal_sabir_img.data.attributes.url
+                      }
+                      alt=""
+                    />
+                    <small>
+                      <ReactMarkdown children={a.attributes.ghezal_sabir} />
+                    </small>
+                  </article>
+                </section>
+              </article>
               <footer id="footnote">
                 <small>
                   <ReactMarkdown children={a.attributes.footnote} />

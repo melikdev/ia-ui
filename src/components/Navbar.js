@@ -18,8 +18,8 @@ const Navbar = () => {
           <li>
             <Link to="/">
               <img
-                height="100px"
-                width="110px"
+                height="130px"
+                width="140px"
                 className="nav-logo"
                 alt=""
                 src={require("../assets/images/nav-logo.png")}
