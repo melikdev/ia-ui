@@ -10,7 +10,7 @@ import CloseIcon from "@mui/icons-material/Close"
 
 const Gallery = () => {
   const url = process.env.REACT_APP_API_URL + "/galleries?populate=*"
-  const { data: gallery } = useFetch(url)
+  const { data: gallery, loading } = useFetch(url)
 
   const [toggleModal, setToggleModal] = useState(false)
   const [currentImg, setCurrentImg] = useState(null)
@@ -53,63 +53,71 @@ const Gallery = () => {
   return (
     <>
       <main className="container gallery-container">
-        <article className="gallery-wrapper">
-          {gallery.map((g, index) => (
-            <section className="single-img" key={g.id}>
-              <img
-                onClick={() => clickListener(g, index)}
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  g.attributes.img.data.attributes.url
-                }
-                alt=""
-              />
-              {toggleModal && (
-                <section onClick={handleClick} className="modal">
-                  <section className="modal-wrapper">
-                    <CloseIcon
-                      style={{ fontSize: "20px" }}
-                      className="close-icon"
-                      onClick={() => setToggleModal(false)}
-                    />
-                    <div className="modal-img">
-                      <div className="arrows">
-                        {currentImg && (
-                          <ArrowForwardIosIcon
-                            className="next"
-                            onClick={() => nextImage(index)}
+        {loading ? (
+          <article aria-busy="true"></article>
+        ) : (
+          <article className="gallery-wrapper">
+            {gallery.map((g, index) => (
+              <section className="single-img" key={g.id}>
+                {loading ? (
+                  <article aria-busy="true"></article>
+                ) : (
+                  <img
+                    onClick={() => clickListener(g, index)}
+                    src={
+                      process.env.REACT_APP_UPLOAD_URL +
+                      g.attributes.img.data.attributes.url
+                    }
+                    alt=""
+                  />
+                )}
+                {toggleModal && (
+                  <section onClick={handleClick} className="modal">
+                    <section className="modal-wrapper">
+                      <CloseIcon
+                        style={{ fontSize: "20px" }}
+                        className="close-icon"
+                        onClick={() => setToggleModal(false)}
+                      />
+                      <div className="modal-img">
+                        <div className="arrows">
+                          {currentImg && (
+                            <ArrowForwardIosIcon
+                              className="next"
+                              onClick={() => nextImage(index)}
+                            />
+                          )}
+                          {currentIndex >= 0 && (
+                            <ArrowBackIosIcon
+                              className="prev"
+                              onClick={() => previousImage(index)}
+                            />
+                          )}
+                        </div>
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={process.env.REACT_APP_UPLOAD_URL + currentImg}
+                        >
+                          <img
+                            src={process.env.REACT_APP_UPLOAD_URL + currentImg}
+                            alt=""
                           />
-                        )}
-                        {currentIndex >= 0 && (
-                          <ArrowBackIosIcon
-                            className="prev"
-                            onClick={() => previousImage(index)}
-                          />
-                        )}
+                        </a>
                       </div>
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href={process.env.REACT_APP_UPLOAD_URL + currentImg}
-                      >
-                        <img
-                          src={process.env.REACT_APP_UPLOAD_URL + currentImg}
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="desc">
-                      <small>
-                        <ReactMarkdown children={currentScientific} />
-                        <ReactMarkdown children={currentSpiritual} />
-                      </small>
-                    </div>
+                      <div className="desc">
+                        <small>
+                          <ReactMarkdown children={currentScientific} />
+                          <ReactMarkdown children={currentSpiritual} />
+                        </small>
+                      </div>
+                    </section>
                   </section>
-                </section>
-              )}
-            </section>
-          ))}
-        </article>
+                )}
+              </section>
+            ))}
+          </article>
+        )}
       </main>
     </>
   )

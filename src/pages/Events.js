@@ -4,20 +4,26 @@ import useFetch from "../hooks/useFetch"
 
 const Events = () => {
   const url = process.env.REACT_APP_API_URL + "/events?populate=*"
-  const { data: events } = useFetch(url)
+  const { data: events, loading } = useFetch(url)
 
   return (
     <main className="container">
-      {events.map((e) => (
-        <article key={e.id}>
-          <h1 style={{ textAlign: "center" }}>{e.attributes.header}</h1>
-          <article>
-            <small>
-              <ReactMarkdown children={e.attributes.events_info} />
-            </small>
-          </article>
-        </article>
-      ))}
+      {loading ? (
+        <article aria-busy="true"></article>
+      ) : (
+        <section className="events-wrapper">
+          {events.map((e) => (
+            <section key={e.id}>
+              <h1 style={{ textAlign: "center" }}>{e.attributes.header}</h1>
+              <article>
+                <small>
+                  <ReactMarkdown children={e.attributes.events_info} />
+                </small>
+              </article>
+            </section>
+          ))}
+        </section>
+      )}
     </main>
   )
 }
