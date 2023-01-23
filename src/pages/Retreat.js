@@ -1,5 +1,7 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+import { Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
+import "../assets/styles/retreat.scss"
 
 const Retreat = () => {
   const url = process.env.REACT_APP_API_URL + "/retreats?populate=*"
@@ -7,35 +9,23 @@ const Retreat = () => {
 
   return (
     <main className="container">
-      {loading ? (
-        <article aria-busy="true"></article>
-      ) : (
-        <section className="retreat-wrapper">
-          {retreat.map((r) => (
-            <section key={r.id}>
-              <h1 style={{ textAlign: "center" }}>{r.attributes.header}</h1>
-              <article style={{ padding: "80px" }}>
-                <section>
-                  <small>
-                    <ReactMarkdown children={r.attributes.intro_text} />
-                  </small>
-                  <small>
-                    <ReactMarkdown children={r.attributes.program} />
-                  </small>
-                  <small>
-                    <ReactMarkdown
-                      children={r.attributes.location_accommodation}
-                    />
-                  </small>
-                  <small>
-                    <ReactMarkdown children={r.attributes.registration_fees} />
-                  </small>
-                </section>
+      <section>
+        <h1 style={{ textAlign: "center" }}>RETREATS</h1>
+        {loading ? (
+          <article aria-busy="true"></article>
+        ) : (
+          <section className="retreat-wrapper grid">
+            {retreat.map((r) => (
+              <article key={r.id}>
+                <Link to={`/retreat/${r.id}`}>
+                  <h3>{r.attributes.retreat_name}</h3>
+                  <small>Click for more information.</small>
+                </Link>
               </article>
-            </section>
-          ))}
-        </section>
-      )}
+            ))}
+          </section>
+        )}
+      </section>
     </main>
   )
 }

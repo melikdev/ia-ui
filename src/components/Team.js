@@ -1,47 +1,37 @@
-import React from "react"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+import "../assets/styles/team.scss"
 
 import useFetch from "../hooks/useFetch"
 
 const Team = () => {
-  const url = process.env.REACT_APP_API_URL + "/about-uses?populate=*"
-  const { data: about } = useFetch(url)
+  const url = process.env.REACT_APP_API_URL + "/teams?populate=*"
+  const { data: team } = useFetch(url)
+  console.log(team)
 
   return (
     <main className="container">
-      {about.map((a) => (
-        <section key={a.id}>
-          <h1 style={{ textAlign: "center" }}>TEAM</h1>
-          <section className="team grid">
-            <article className="harun">
-              <img
-                width="200px"
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  a.attributes.harun_cicek_img.data.attributes.url
-                }
-                alt=""
-              />
+      <section className="grid team">
+        {team.map((t) => (
+          <article className="member" key={t.id}>
+            <img
+              width="200px"
+              src={
+                process.env.REACT_APP_UPLOAD_URL +
+                t.attributes.member_img.data.attributes.url
+              }
+              alt=""
+            />
+            <section className="desc">
+              <h2>
+                <ReactMarkdown children={t.attributes.member_name} />
+              </h2>
               <small>
-                <ReactMarkdown children={a.attributes.harun_cicek} />
+                <ReactMarkdown children={t.attributes.member_description} />
               </small>
-            </article>
-            <article className="ghezal">
-              <img
-                width="200px"
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  a.attributes.ghezal_sabir_img.data.attributes.url
-                }
-                alt=""
-              />
-              <small>
-                <ReactMarkdown children={a.attributes.ghezal_sabir} />
-              </small>
-            </article>
-          </section>
-        </section>
-      ))}
+            </section>
+          </article>
+        ))}
+      </section>
     </main>
   )
 }

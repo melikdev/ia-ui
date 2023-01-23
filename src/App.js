@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
 import Retreat from "./pages/Retreat"
 import ContactPage from "./pages/ContactPage"
+import RetreatDetails from "./pages/RetreatDetails"
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/about-us/team" element={<Team />} />
         <Route path="/retreat" element={<Retreat />} />
+        <Route path="/retreat/:id" element={<RetreatDetails />} />
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<ContactPage />} />

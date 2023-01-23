@@ -1,6 +1,9 @@
 import ReactMarkdown from "react-markdown"
 import "../assets/styles/about-us.scss"
 
+// components
+import Team from "../components/Team"
+
 // hooks
 import useFetch from "../hooks/useFetch"
 
@@ -62,37 +65,7 @@ const AboutUs = () => {
                   <ReactMarkdown children={a.attributes.background2} />
                 </small>
               </article>
-              <article className="team-container">
-                <h1 style={{ textAlign: "center" }}>TEAM</h1>
-                <section className="team grid">
-                  <article className="harun">
-                    <img
-                      width="200px"
-                      src={
-                        process.env.REACT_APP_UPLOAD_URL +
-                        a.attributes.harun_cicek_img.data.attributes.url
-                      }
-                      alt=""
-                    />
-                    <small>
-                      <ReactMarkdown children={a.attributes.harun_cicek} />
-                    </small>
-                  </article>
-                  <article className="ghezal">
-                    <img
-                      width="200px"
-                      src={
-                        process.env.REACT_APP_UPLOAD_URL +
-                        a.attributes.ghezal_sabir_img.data.attributes.url
-                      }
-                      alt=""
-                    />
-                    <small>
-                      <ReactMarkdown children={a.attributes.ghezal_sabir} />
-                    </small>
-                  </article>
-                </section>
-              </article>
+              <Team />
               <footer id="footnote">
                 <small>
                   <ReactMarkdown children={a.attributes.footnote} />
