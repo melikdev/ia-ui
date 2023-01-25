@@ -1,17 +1,8 @@
-.team {
+.member {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
   text-align: center;
-
-  .member {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  h2 {
-    margin: 20px;
-    padding: 0;
-  }
 }

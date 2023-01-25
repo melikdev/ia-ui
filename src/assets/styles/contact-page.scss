@@ -6,4 +6,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.alert-text {
+  background-color: teal;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 50px;
 }
